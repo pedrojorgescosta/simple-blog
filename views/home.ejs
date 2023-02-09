@@ -1,0 +1,17 @@
+<%- include("partials/header") -%>
+    <h1>Home</h1>
+    <p>
+        <%= homeBody %>
+    </p>
+    <% ejsPosts.forEach(e=> {%>
+        <h1>
+            <a href="/posts/<%= e.slang %>">
+                <%= e.title %>
+            </a>
+        </h1>
+        <p>
+            <%= e.body %>
+
+        </p>
+        <% }) %>
+            <%- include("partials/footer") -%>
