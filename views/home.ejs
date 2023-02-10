@@ -1,17 +1,17 @@
 <%- include("partials/header") -%>
-    <h1>Home</h1>
-    <p>
-        <%= homeBody %>
-    </p>
-    <% ejsPosts.forEach(e=> {%>
-        <h1>
-            <a href="/posts/<%= e.slang %>">
+    <div class="blog-post">
+        <% ejsPosts.forEach(e=> {%>
+            <h2 class="blog-post-title">
                 <%= e.title %>
-            </a>
-        </h1>
-        <p>
-            <%= e.body %>
-
-        </p>
-        <% }) %>
-            <%- include("partials/footer") -%>
+            </h2>
+            <small class="blog-post-meta">
+                <%= e.createdOn %>
+            </small>
+            <p>
+                <%= e.body %>
+            </p>
+            <a href="/posts/<%= e.slang %>"> Read more </a>
+            <hr>
+            <% }) %>
+    </div>
+    <%- include("partials/footer") -%>
